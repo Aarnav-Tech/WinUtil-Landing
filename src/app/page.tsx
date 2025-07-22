@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Github, Download, Package, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 
 interface Asset {
   name: string;
@@ -61,11 +62,14 @@ export default async function Home() {
             <Package className="h-6 w-6 text-primary" />
             <span className="font-bold text-lg">WinUtil</span>
           </Link>
-          <Button asChild variant="ghost" size="icon">
-            <a href="https://github.com/Aarnav-Tech/winutil" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
-              <Github className="h-5 w-5" />
-            </a>
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeSwitcher />
+            <Button asChild variant="ghost" size="icon">
+              <a href="https://github.com/Aarnav-Tech/winutil" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                <Github className="h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </header>
 
